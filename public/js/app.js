@@ -15,7 +15,7 @@ weatherForm.addEventListener('submit', (event) => {
 
     // fetch() is an Asynchronous IO operation
     // in this case the callback function is passed via the then() method
-    fetch('http://0.0.0.0:3000/weather?address=' + location).then( (response) => {
+    fetch('/weather?address=' + location).then( (response) => {
         response.json().then( (data) => {
             if (data.error) {
                 console.log(data.error)

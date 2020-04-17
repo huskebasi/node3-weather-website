@@ -7,6 +7,10 @@ const geocode = require('../utils/geocode')
 const forecast = require('../utils/forecast')
 
 const app = express()
+
+// fetch the port value from heroku |OR| set 3000 if it fails (e.g. locally)
+const port = process.env.PORT || 3000
+
 // set view engine as hbs, which is handlebar integration for express
 app.set('view engine','hbs')
 
@@ -94,6 +98,6 @@ app.get('*',(req,res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000')
+app.listen(port, () => {
+    console.log('server is up on port ' + port)
 })
